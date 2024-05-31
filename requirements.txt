@@ -1,0 +1,8 @@
+numpy
+trimesh
+tqdm
+Pillow
+scipy
+plyfile
+pandas
+blosc2
