@@ -2,12 +2,12 @@
 
 ## Overview
 
-`vesuvius-segment2voxel` is a tool designed for the Vesuvius Challenge. It converts segment meshes into volumetric voxel labels in [Blosc2](https://github.com/Blosc/c-blosc2) NDarray format for compression and fast accessibility. The integer labels correspond to some arclength around the axis of rotation. The full process involves loading mesh segments, orienting UVs, voxelizing the mesh, and assigning labels.
+`vesuvius-segment2voxel` is a tool designed for the Vesuvius Challenge. It converts segment meshes into volumetric voxel labels in [Blosc2](https://github.com/Blosc/c-blosc2) NDarray format for compression and fast accessibility. The integer labels correspond to some arclength around the axis of rotation. The full process involves loading mesh segments, orienting UVs, voxelating the mesh, and assigning labels.
 
 ## Features
 
 - Load mesh segments and their associated UV maps.
-- Voxelize the mesh with specified `resolution` and `chunk sizes`, during this process a big `ply` file is created.
+- Voxelate the mesh with specified `resolution` and `chunk sizes`, during this process a big `ply` file is created.
 - Read data from the `ply` in batches and assign voxel labels based on UV coordinates and arclength around a `specified axis`.
 - Utilize efficient compression and multithreading with Blosc2.
 
@@ -42,7 +42,7 @@ This script uses `obj2voxel` from the [Eisenwave/obj2voxel](https://github.com/E
 
 ## Usage
 
-The main script for voxelization and labeling can be executed with the following command:
+The main script for voxelating and labeling can be executed with the following command:
 
 ```sh
 python segment2voxel.py --work_dir <WORKING_DIRECTORY> --segment_id <SEGMENT_ID> --chunk <CHUNK_SIZE> --axis <UV_AXIS> --workers <NUM_WORKERS> --batch_size <BATCH_SIZE> --obj2voxel <OBJ2VOXEL_EXECUTABLE>
